@@ -10,7 +10,8 @@ router.post("/", validate(borrowSchema), async (req, res, next) => {
     const { memberId, bookIds } = req.body;
     const record = await borrowBooks(memberId, bookIds);
     res.json(record);
-  } catch (err) {
+  } catch (err)
+  {
     next(err);
   }
 });
